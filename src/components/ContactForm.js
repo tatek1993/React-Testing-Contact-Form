@@ -7,6 +7,7 @@ const ContactForm = () => {
     mode: "onBlur"
   });
   const onSubmit = data => {
+    console.log("Hello there", data);
     setData(data);
   };
 
@@ -61,11 +62,12 @@ const ContactForm = () => {
           />
         </div>
         {data && (
-          <pre style={{ textAlign: "left", color: "white" }}>
+          <pre data-testid="formData" style={{ textAlign: "left", color: "white" }}>
             {JSON.stringify(data, null, 2)}
+            {/* {data.firstName} */}
           </pre>
         )}
-        <input type="submit" />
+        <input data-testid={"submit"} type="submit" />
       </form>
     </div>
   );
